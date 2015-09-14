@@ -1,0 +1,23 @@
+AppBundle\Entity\Sent_Questionnaire:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\Sent_QuestionnaireRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        questionnaireId:
+            type: integer
+            column: questionnaire_id
+        personId:
+            type: integer
+            column: person_id
+        sentDate:
+            type: datetime
+            column: sent_date
+        completed:
+            type: boolean
+    lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+AppBundle\Entity\Question_Category:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\Question_CategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        categoryId:
+            type: integer
+            column: category_id
+    lifecycleCallbacks: {  }

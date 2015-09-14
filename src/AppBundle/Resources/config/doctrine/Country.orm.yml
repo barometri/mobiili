@@ -1,0 +1,16 @@
+AppBundle\Entity\Country:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\CountryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        countryName:
+            type: string
+            length: '20'
+            column: country_name
+    lifecycleCallbacks: {  }

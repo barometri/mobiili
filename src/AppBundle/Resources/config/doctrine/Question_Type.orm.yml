@@ -1,0 +1,16 @@
+AppBundle\Entity\Question_Type:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\Question_TypeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        questionTypeName:
+            type: string
+            length: '50'
+            column: question_type_name
+    lifecycleCallbacks: {  }

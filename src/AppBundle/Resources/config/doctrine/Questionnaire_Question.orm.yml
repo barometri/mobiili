@@ -1,0 +1,20 @@
+AppBundle\Entity\Questionnaire_Question:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\Questionnaire_QuestionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        questionId:
+            type: integer
+            column: question_id
+        questionnaireId:
+            type: integer
+            column: questionnaire_id
+        answered:
+            type: boolean
+    lifecycleCallbacks: {  }

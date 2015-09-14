@@ -1,0 +1,16 @@
+AppBundle\Entity\Person_Level:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\Person_LevelRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        levelName:
+            type: string
+            length: '40'
+            column: level_name
+    lifecycleCallbacks: {  }

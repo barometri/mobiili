@@ -1,0 +1,19 @@
+AppBundle\Entity\Team:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\TeamRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        countryId:
+            type: integer
+            column: country_id
+        teamName:
+            type: string
+            length: '40'
+            column: team_name
+    lifecycleCallbacks: {  }

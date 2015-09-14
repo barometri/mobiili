@@ -1,0 +1,21 @@
+AppBundle\Entity\Person_Team:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\Person_TeamRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        personId:
+            type: integer
+            column: person_id
+        teamId:
+            type: integer
+            column: team_id
+        role:
+            type: string
+            length: '40'
+    lifecycleCallbacks: {  }
