@@ -17,11 +17,25 @@ class Person_Team
     /**
      * @var integer
      */
+
+    /**
+     * @ManyToOne(targetEntity="Person", inversedBy="people")
+     * @JoinColumn(name="person_id", referencedColumnName="id")
+     **/
+
+
     private $personId;
 
     /**
      * @var integer
      */
+
+    /**
+     * @ManyToOne(targetEntity="Team", inversedBy="teams")
+     * @JoinColumn(name="team_id", referencedColumnName="id")
+     **/
+
+
     private $teamId;
 
     /**

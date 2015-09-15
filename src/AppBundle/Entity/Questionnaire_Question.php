@@ -17,6 +17,11 @@ class Questionnaire_Question
     /**
      * @var integer
      */
+    /**
+     * @ManyToOne(targetEntity="Question", inversedBy="questionsQuestionnaires")
+     * @JoinColumn(name="question_id", referencedColumnName="id")
+     **/
+
     private $questionId;
 
     /**

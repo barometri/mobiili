@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Question
@@ -17,17 +18,33 @@ class Question
     /**
      * @var integer
      */
-    private $questionCategoyId;
+
+    /**
+     * @OneToMany(targetEntity="Question_Category", mappedBy="question")
+     **/
+    private $questionCategoryId;
 
     /**
      * @var integer
      */
+
+    /**
+     * @ManyToOne(targetEntity="Question_Type")
+     * @JoinColumn(name="question_type_id", referencedColumnName="id")
+     **/
+
     private $questionTypeId;
 
     /**
      * @var string
      */
     private $questionContent;
+
+
+
+    protected $questionsCategories;
+    protected $questionsQuestionnaires;
+
 
 
     /**
@@ -108,4 +125,18 @@ class Question
     {
         return $this->questionContent;
     }
+
+
+    public function __construct()
+    {
+        $this->questionsCategories = new ArrayCollection();
+        $this->questionsQuestionnaires = new ArrayCollection();
+    }
+
+
+
+
+
+
+
 }

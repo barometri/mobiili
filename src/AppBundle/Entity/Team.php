@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Team
  */
@@ -17,12 +17,21 @@ class Team
     /**
      * @var integer
      */
+
+    /**
+     * @ManyToOne(targetEntity="Country")
+     * @JoinColumn(name="country_id", referencedColumnName="id")
+     **/
+
     private $countryId;
 
     /**
      * @var string
      */
     private $teamName;
+
+
+    protected $teams;
 
 
     /**
@@ -80,4 +89,11 @@ class Team
     {
         return $this->teamName;
     }
+
+    public function __construct()
+    {
+        $this->teams = new ArrayCollection();
+    }
+
+
 }

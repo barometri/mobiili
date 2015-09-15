@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Category
@@ -18,6 +19,13 @@ class Category
      * @var string
      */
     private $categoryName;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Question_Category", mappedBy="category")
+     */
+
+    protected $questionCategories;
 
 
     /**
@@ -52,4 +60,12 @@ class Category
     {
         return $this->categoryName;
     }
+
+
+
+    public function __construct()
+    {
+        $this->questionCategories = new ArrayCollection();
+    }
+
 }

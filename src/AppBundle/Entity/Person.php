@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Person
  */
@@ -17,6 +17,12 @@ class Person
     /**
      * @var integer
      */
+
+    /**
+     * @ManyToOne(targetEntity="Person_Level")
+     * @JoinColumn(name="person_level_id", referencedColumnName="id")
+     **/
+
     private $levelId;
 
     /**
@@ -49,6 +55,8 @@ class Person
      */
     private $password;
 
+
+    protected $people;
 
     /**
      * Get id
@@ -220,4 +228,10 @@ class Person
     {
         return $this->password;
     }
+
+    public function __construct()
+    {
+        $this->people = new ArrayCollection();
+    }
+
 }
