@@ -1,0 +1,4 @@
+CREATE DATABASE mobiilibarometri;
+
+-- When logging use:  mysql -h host -u user -p mobiilibarometri;
+ -- Enter password: ********
