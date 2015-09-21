@@ -17,11 +17,22 @@ class Sent_Questionnaire
     /**
      * @var integer
      */
+
+    /**
+     * @ManyToOne(targetEntity="Questionnaire", inversedBy="sentQuestionnaires")
+     * @JoinColumn(name="questionnaire_id", referencedColumnName="id")
+     **/
+
     private $questionnaireId;
 
     /**
      * @var integer
      */
+    /**
+     * @ManyToOne(targetEntity="Person")
+     * @JoinColumn(name="person_id", referencedColumnName="id")
+     **/
+
     private $personId;
 
     /**
@@ -33,6 +44,8 @@ class Sent_Questionnaire
      * @var boolean
      */
     private $completed;
+
+    protected $sentQuestionnaires;
 
 
     /**

@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Questionnaire
  */
@@ -17,6 +17,13 @@ class Questionnaire
     /**
      * @var integer
      */
+
+    /**
+     * @ManyToOne(targetEntity="Person")
+     * @JoinColumn(name="person_id", referencedColumnName="id")
+     **/
+
+
     private $creatorId;
 
     /**
@@ -28,6 +35,10 @@ class Questionnaire
      * @var boolean
      */
     private $hidden;
+
+    protected $questionnaires;
+
+    protected $sentQuestionnaires;
 
 
     /**
@@ -108,4 +119,16 @@ class Questionnaire
     {
         return $this->hidden;
     }
+
+    public function __construct()
+    {
+        $this->questionnaires = new ArrayCollection();
+        $this->sentQuestionnaires = new ArrayCollection();
+
+    }
+
+
+
+
+
 }
