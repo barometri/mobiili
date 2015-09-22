@@ -17,6 +17,7 @@ class Person_Answer
     /**
      * @var integer
      */
+    
     private $questionId;
 
     /**
