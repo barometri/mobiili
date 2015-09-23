@@ -63,8 +63,8 @@ class DefaultController extends Controller
                 'No Country found for id ' . $id
             );
         }
-           $countryArray[] = $country->getId() ;
-            $countryArray[] = $country->getCountryName() ;
+        $countryArray[] = $country->getId() ;
+        $countryArray[] = $country->getCountryName() ;
 
         $response = json_encode($countryArray); //json_encode(array($country))
 
@@ -118,9 +118,9 @@ class DefaultController extends Controller
         return new Response($response);
     }
 
-        /**
-        * @Route("/person/create")
-        */
+    /**
+     * @Route("/person/create")
+     */
 
     public function createActionPerson()
     {
@@ -254,7 +254,7 @@ class DefaultController extends Controller
         $personLevelArray [] = $personLevel->getLevelName();
 
 
-       return new Response( json_encode($personLevelArray));
+        return new Response( json_encode($personLevelArray));
     }
 
 

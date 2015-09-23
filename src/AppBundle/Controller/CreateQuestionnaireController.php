@@ -12,7 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class CreateQuestionnaireController extends Controller
 {
     /**
      * @Route("/", name="homepage")
@@ -20,36 +20,36 @@ class DefaultController extends Controller
 
     Protected $authToken = 0;
 
-    public function runController {
+    public function runController() {
 
-
+        $level = 4;
 
         $this->testLogin("a",$level);
 
-        private function testLogin ($auth, $level)
+        protected function testLogin ($auth, $level)
         {   // place holder values, doesn't do anything yet
 
             if (($auth == "a") && ($level == 4)) {
 
-            $this->authToken = 1;
+                $this->authToken = 1;
 
 
-        } else {
+            } else {
 
-            giveError();
-        }
-    }
+                    giveError();
+                }
+            }
 
-    public function giveError ()
-    {
+        public function giveError ()
+        {
 
-        Echo 'something fucked up';
+            Echo 'something messed up';
 
-    }
+            }
 
 
 
-createActionHistory
+
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
