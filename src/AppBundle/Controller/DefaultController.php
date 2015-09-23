@@ -63,8 +63,8 @@ class DefaultController extends Controller
                 'No Country found for id ' . $id
             );
         }
-           $countryArray[] = $country->getId() ;
-            $countryArray[] = $country->getCountryName() ;
+        $countryArray[] = $country->getId() ;
+        $countryArray[] = $country->getCountryName() ;
 
         $response = json_encode($countryArray); //json_encode(array($country))
 
@@ -118,9 +118,9 @@ class DefaultController extends Controller
         return new Response($response);
     }
 
-        /**
-        * @Route("/person/create")
-        */
+    /**
+     * @Route("/person/create")
+     */
 
     public function createActionPerson()
     {
@@ -254,7 +254,7 @@ class DefaultController extends Controller
         $personLevelArray [] = $personLevel->getLevelName();
 
 
-       return new Response( json_encode($personLevelArray));
+        return new Response( json_encode($personLevelArray));
     }
 
 
@@ -342,7 +342,7 @@ class DefaultController extends Controller
     public function createActionQuestion()
     {
         $question = new Question();
-        $question->setQuestionCategoyId('A Foo Bar');
+        $question->setQuestionCategoryId('A Foo Bar');
         $question->setQuestionTypeId('A Foo Bar');
         $question->setQuestionContent('A Foo Bar');
 
@@ -352,7 +352,7 @@ class DefaultController extends Controller
         $em->flush();
 
         $questionArray [] = $question->getId();
-        $questionArray [] = $question->getQuestionCategoyId();
+        $questionArray [] = $question->getQuestionCategoryId();
         $questionArray [] = $question->getQuestionTypeId();
         $questionArray [] = $question->getQuestionContent();
 
@@ -377,7 +377,7 @@ class DefaultController extends Controller
             );
         }
         $questionArray [] = $question->getId();
-        $questionArray [] = $question->getQuestionCategoyId();
+        $questionArray [] = $question->getQuestionCategoryId();
         $questionArray [] = $question->getQuestionTypeId();
         $questionArray [] = $question->getQuestionContent();
 
@@ -488,10 +488,10 @@ class DefaultController extends Controller
      * @Route("/Questionnaire/create")
      */
 
-    public function createActionQuestionnaire()
+    public function createActionQuestionnaire($array)
     {
         $questionnaire = new Questionnaire();
-        $questionnaire->setCreatorId('A Foo Bar');
+        $questionnaire->setCreatorId($array());
         $questionnaire->setCreatedDate('A Foo Bar');
         $questionnaire->setHidden('A Foo Bar');
 
@@ -651,21 +651,26 @@ class DefaultController extends Controller
      * @Route("/Team/create")
      */
 
-    public function createActionTeam()
+    public function createActionTeam($teamName,$countryName)
     {
+        $country = new Country();
+        $country->setCountryName($countryName);
+
         $team = new Team();
-        $team->setCountryId('A Foo Bar');
-        $team->setTeamName('A Foo Bar');
+        $team->setCountryId($countryId);
+        $team->setTeamName($teamName);
+        // relate this product to the category
+        $team->setCountry($country);
 
 
         $em = $this->getDoctrine()->getManager();
-
         $em->persist($team);
         $em->flush();
 
         $teamArray [] = $team->getId();
         $teamArray [] = $team->getCountryId();
-        $teamArray [] = $team->getTeamName();
+        $teamArray [] = $country->getId();
+        $teamArray [] = $country->getCountryName();
 
 
 
