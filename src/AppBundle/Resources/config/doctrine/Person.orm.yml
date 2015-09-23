@@ -9,9 +9,9 @@ AppBundle\Entity\Person:
             generator:
                 strategy: AUTO
     fields:
-        levelId:
-            type: integer
-            column: level_id
+        #levelId:
+        #   type: integer
+        #   column: level_id
         firstName:
             type: string
             length: '20'
@@ -23,13 +23,13 @@ AppBundle\Entity\Person:
         registerDate:
             type: datetime
             column: register_date
-        email:
-            type: string
-            length: '40'
+        #email:
+         #   type: string
+          #  length: '40'
         phonenumber:
             type: string
             length: '20'
-        password:
-            type: string
-            length: '20'
+        #password:
+        #    type: string
+        #    length: '20'
     lifecycleCallbacks: {  }

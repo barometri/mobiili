@@ -2,17 +2,20 @@
 
 namespace AppBundle\Entity;
 
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ODM\CouchDB\Mapping\Annotations as CouchDB;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Person
  */
-class Person
+class Person extends BaseUser
 {
     /**
      * @var integer
      */
-    private $id;
+    protected $id;
 
     /**
      * @var integer
@@ -23,7 +26,7 @@ class Person
      * @JoinColumn(name="person_level_id", referencedColumnName="id")
      **/
 
-    private $levelId;
+    ##private $levelId;
 
     /**
      * @var string
@@ -40,23 +43,24 @@ class Person
      */
     private $registerDate;
 
-    /**
-     * @var string
-     */
-    private $email;
+   # /**
+   #  * @var string
+   #  */
+   # protected $email;
 
     /**
      * @var string
      */
+    #
     private $phonenumber;
 
-    /**
-     * @var string
-     */
-    private $password;
+    #/**
+    # * @var string
+    # */
+    #protected $password;
 
 
-    protected $people;
+    #protected $people;
 
     /**
      * Get id
@@ -231,6 +235,7 @@ class Person
 
     public function __construct()
     {
+        parent::__construct();
         $this->people = new ArrayCollection();
     }
 

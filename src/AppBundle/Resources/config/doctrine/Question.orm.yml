@@ -11,7 +11,7 @@ AppBundle\Entity\Question:
     fields:
         questionCategoyId:
             type: integer
-            column: question_categoy_id
+            column: question_category_id
         questionTypeId:
             type: integer
             column: question_type_id
