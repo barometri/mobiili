@@ -4,7 +4,7 @@ security:
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         fos_userbundle:
-          id: fos_user.user_provider.username_email
+          id: fos_user.user_provider.username
         in_memory:
             memory:
               users:
@@ -23,14 +23,14 @@ security:
     
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
-        default:
-            anonymous: ~
+        #default:
+         #   anonymous: ~
             # activate different ways to authenticate
-            http_basic: ~
+          #  http_basic: ~
             # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
-            form_login:
-              login_path: /login
-              check_path: /check_path
+           # form_login:
+            #  login_path: /login
+             # check_path: /check_path
         main:
             pattern: ^/
             form_login:
@@ -43,7 +43,8 @@ security:
             anonymous: ~
         secured_area:
             pattern:    ^/
-            form_login: ~
+            form_login:
+              csrf_provider: security.csrf.token_manager
             
     access_control:
             # require ROLE_ADMIN for /admin*
