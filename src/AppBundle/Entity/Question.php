@@ -58,26 +58,26 @@ class Question
     }
 
     /**
-     * Set questionCategoyId
+     * Set questionCategoryId
      *
-     * @param integer $questionCategoyId
+     * @param integer $questionCategoryId
      * @return Question
      */
-    public function setQuestionCategoyId($questionCategoyId)
+    public function setQuestionCategoryId($questionCategoryId)
     {
-        $this->questionCategoyId = $questionCategoyId;
+        $this->questionCategoryId = $questionCategoryId;
 
         return $this;
     }
 
     /**
-     * Get questionCategoyId
+     * Get questionCategoryId
      *
      * @return integer 
      */
-    public function getQuestionCategoyId()
+    public function getQuestionCategoryId()
     {
-        return $this->questionCategoyId;
+        return $this->questionCategoryId;
     }
 
     /**
