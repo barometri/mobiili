@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="C:\Users\Ukko\Desktop\Bootstrap_inno\bootstrap-3.3.5-dist\css\teams.css\teams_bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="C:\Users\Ukko\Desktop\Bootstrap_inno\bootstrap-3.3.5-dist\css\teams.css\teams.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Innovointiprojekti 2015</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="file:///C:/Users/Ukko/Desktop/Bootstrap_inno/bootstrap-3.3.5-dist/admin_dashboard.html">Dashboard</a></li>
+            <li><a href="file:///C:/Users/Ukko/Desktop/Bootstrap_inno/bootstrap-3.3.5-dist/index.html">My site</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="C:\Users\Ukko\Desktop\Bootstrap_inno\bootstrap-3.3.5-dist\countries.html">Countries</a></li>
+            <li><a href="C:\Users\Ukko\Desktop\Bootstrap_inno\bootstrap-3.3.5-dist\teams.html">Teams</a></li>
+            <li><a href="C:\Users\Ukko\Desktop\Bootstrap_inno\bootstrap-3.3.5-dist\users.html">Users</a></li>
+			<li><a href="C:\Users\Ukko\Desktop\Bootstrap_inno\bootstrap-3.3.5-dist\answers.html">Answers</a></li>
+			<li><a href="#">Statistic</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Create a category</a></li>
+            <li><a href="">Create teams</a></li>
+            <li><a href="">Create a questionnaire</a></li>
+            <li><a href="">Add countries</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			Choose a team
+			<span class="caret"></span>
+			</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li><a href="#">Team1</a></li>
+				<li><a href="#">Team2</a></li>
+				<li><a href="#">Team3</a></li>
+				<li><a href="#">Team4</a></li>
+			</ul>
+		</div>
+		<br>
+          <h2 class="sub-header">Add a new team</h2>
+          </div>
+		  <form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add a new team</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Write your team name here</label>  
+  <div class="col-md-5">
+  <input id="textinput" name="textinput" type="text" placeholder="team name" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectmultiple">Choose a country</label>
+  <div class="col-md-5">
+    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+      <option value="1">Finland</option>
+      <option value="2">Spain</option>
+      <option value="3">England</option>
+      <option value="4">Sweden</option>
+      <option value="5">Norway</option>
+      <option value="6">Denmark</option>
+      <option value="7">Germany</option>
+      <option value="">France</option>
+    </select>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
