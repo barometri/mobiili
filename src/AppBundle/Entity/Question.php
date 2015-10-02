@@ -139,4 +139,10 @@ class Question
 
 
 
+    /**
+     * @var integer
+     */
+    private $questionCategoyId;
+
+
 }
